@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Validação de dados</title> 
+	<style>
+		form {
+			width: 400px;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #f5f5f5;
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		input[type="text"], input[type="number"], input[type="radio"] {
+			display: block;
+			width: 100%;
+			padding: 5px;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		input[type="submit"] {
+			display: block;
+			width: 100%;
+			padding: 5px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+
+    <center> <h2>Validação de dados</h2> </center>
+
+	<form id="form-dados" onsubmit="return validarDados()">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome" minlength="4"><br>
+		<span id="error-nome" class="error"></span>
+
+		<label for="idade">Idade:</label>
+		<input type="number" id="idade" name="idade" min="0" max="150"><br>
+		<span id="error-idade" class="error"></span>
+
+		<label for="salario">Salário:</label>
+		<input type="number" id="salario" name="salario" min="0"><br>
+		<span id="error-salario" class="error"></span>
+
+		<label>Sexo:</label>
+		<input type="button" id="sexo-f" name="sexo" value="F"> 
+		<label for="sexo-f">Feminino</label> 
+		<input type="button" id="sexo-m" name="sexo" value="M">
+		<label for="sexo-m">Masculino</label><br>
+		<span id="error-sexo" class="error"></span>
+
+		<label>Estado civil:</label>
+		<select id="estado-civil" name="estado-civil">
+			<option value="s">Solteiro</option>
+			<option value="c">Casado</option>
+			<option value="v">Viúvo</option>
+			<option value="d">Divorciado</option>
+		</select><br>
+		<span id="error-estado-civil" class="error"></span>
+
+		<input type="submit" value="Enviar">
+	</form>
+
+	<script>
+		function validarDados() {
+			var nome = document.getElementById("nome").value;
+			var idade = document.getElementById("idade").value;
+			var salario = document.getElementById("salario").value;
+			var sexo = document.querySelector("input[name=").value;
+        }

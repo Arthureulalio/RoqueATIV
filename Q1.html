@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= X-UA-Compatible initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="calc.css">
+    <title></title>
+</head>
+<body>
+
+
+
+
+    <label for="nota"> Digite uma nota entre 0 e 10 </label>
+
+
+    <input type="number" id="nota" min="0" max="10">
+    <button id="botao">Enviar</button>
+
+
+    <script>
+        const inputNota = document.getElementById('nota');
+        const botao = document.getElementById('botao');
+
+
+        botao.addEventListener('click', function() {
+            const nota = inputNota.value;
+
+
+            if (nota < 0 || nota > 10 || isNaN(nota)) {
+                alert('Valor inválido! Por favor, digite uma nota entre 0 e 10.');
+                inputNota.value = '';
+            } else {
+                alert('Nota digitada: ' + nota);
+            }
+        });
+    </script>
+
+
+</body>
+</html>

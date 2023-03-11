@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Números de 1 a 20</title>
+	<script>
+		function imprimirVertical() {
+			let output = '';
+			for (let i = 1; i <= 20; i++) {
+				output += i + '<br>';
+			}
+			document.getElementById('numeros').innerHTML = output;
+		}
+
+		function imprimirHorizontal() {
+			let output = '';
+			for (let i = 1; i <= 20; i++) {
+				output += i + ' ';
+			}
+			document.getElementById('numeros').innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<h1>Números de 1 a 20</h1>
+	<button onclick="imprimirVertical()">Imprimir vertical</button>
+	<button onclick="imprimirHorizontal()">Imprimir horizontal</button>
+	<div id="numeros"></div>
+</body>
+</html>

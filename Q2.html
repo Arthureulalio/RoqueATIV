@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificação de senha</title>
+</head>
+<body>
+
+	<h2>Verificação de senha</h2>
+
+	<form id="form-login" onsubmit="return validarSenha()">
+		<label for="usuario">Nome de usuario:</label>
+		<input type="text" id="usuario" name="usuario"><br>
+
+		<label for="senha">Senha:</label>
+		<input type="password" id="senha" name="senha"><br>
+
+		<input type="submit" value="Entrar">
+	</form>
+
+	<script>
+		function validarSenha() {
+			var usuario = document.getElementById("usuario").value;
+			var senha = document.getElementById("senha").value;
+
+			if (usuario === senha) {
+				alert("A senha nao pode ser igual ao nome de usuario.");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
+</body>
+</html>

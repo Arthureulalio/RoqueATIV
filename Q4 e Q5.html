@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>População dos países</title>
+</head>
+<body>
+	<form>
+		<label for="popA">População do pais A:</label>
+		<input type="number" id="popA" name="popA" value="80000">
+
+		<label for="taxaA">Taxa de crescimento do pais A (%):</label>
+		<input type="number" id="taxaA" name="taxaA" value="3">
+
+		<label for="popB">População do pais B:</label>
+		<input type="number" id="popB" name="popB" value="200000">
+
+		<label for="taxaB">Taxa de crescimento do pais B (%):</label>
+		<input type="number" id="taxaB" name="taxaB" value="1.5">
+
+		<input type="submit" value="Calcular" onclick="calcularAnos()">
+	</form>
+
+	<div id="resultado"></div>
+
+	<script>
+		function calcularAnos() {
+			let popA = Number(document.getElementById("popA").value);
+			let taxaA = Number(document.getElementById("taxaA").value);
+			let popB = Number(document.getElementById("popB").value);
+			let taxaB = Number(document.getElementById("taxaB").value);
+
+			let anos = 0;
+			while (popA < popB) {
+				popA = popA * (1 + taxaA/100);
+				popB = popB * (1 + taxaB/100);
+				anos++;
+			}
+
+			document.getElementById("resultado").innerHTML = "Serão necessários " + anos + " anos para que a população do país A ultrapasse ou iguale a população do país B.";
+		}
+	</script>
+</body>
+</html>
